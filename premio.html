@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seu prêmio</title>
+
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+
+<body>
+
+    <div class="pagina-premio">
+
+        <img
+            src="fundo3.jpg"
+            class="fundo-premio"
+            alt="Fundo"
+        >
+
+
+        <div class="conteudo-premio">
+
+            <h1>Parabéns!</h1>
+
+            <p id="premio">
+                Carregando seu prêmio...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Pega o código que veio no link
+
+        const parametros = new URLSearchParams(
+            window.location.search
+        );
+
+        const codigo = parametros.get("codigo");
+
+
+        // Local onde o prêmio aparecerá
+
+        const premio = document.getElementById("premio");
+
+
+        // Lista dos prêmios
+
+        const premios = {
+
+            "DESCONTO01": "Você ganhou 10% de desconto!",
+            "DESCONTO02": "Você ganhou 10% de desconto!",
+            "DESCONTO03": "Você ganhou 10% de desconto!",
+            "DESCONTO04": "Você ganhou 10% de desconto!",
+            "DESCONTO05": "Você ganhou 10% de desconto!",
+            "DESCONTO06": "Você ganhou 10% de desconto!",
+            "DESCONTO07": "Você ganhou 10% de desconto!",
+
+            "RECHEIO01": "Você ganhou recheio extra!",
+            "RECHEIO02": "Você ganhou recheio extra!",
+            "RECHEIO03": "Você ganhou recheio extra!",
+
+            "PRODUTO01": "Você ganhou 1 produto a mais!",
+
+            "PATINHO": "Você ganhou um patinho!"
+
+        };
+
+
+        // Verifica se o código existe
+
+        if (codigo && premios[codigo]) {
+
+            premio.textContent = premios[codigo];
+
+        } else {
+
+            premio.textContent = "Código inválido.";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
